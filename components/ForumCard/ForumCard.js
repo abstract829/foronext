@@ -1,16 +1,13 @@
 import { useRouter } from "next/router";
 import { useContext } from "react";
+import { date } from "yup";
 import { ForumContext } from "../../context/forum/ForumContext";
 
 const ForumCard = ({ post }) => {
   const router = useRouter();
   const { parseCategory } = useContext(ForumContext);
-  const dateParse = () => {
-    const fullDate = new Date(post.createdat);
-    const formatDate = `${fullDate.getDay() + 1}/${
-      fullDate.getMonth() + 1
-    }/${fullDate.getFullYear()}`;
-    return formatDate;
+  const dateParse = (date) => {
+    return date.slice(0, 10);
   };
   return (
     <>

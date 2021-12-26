@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const dev = "http://localhost:3000/";
+const prod = "https://foronext.netlify.app";
 const postsApi = axios.create({
-  baseURL: "https://foronext.netlify.app/api/posts",
+  baseURL: `${prod}/api/posts`,
 });
 export const getAllPosts = async () => {
   const { data } = await postsApi.get();
