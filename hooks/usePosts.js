@@ -1,6 +1,8 @@
 import {
   createComment,
   createPost,
+  delComment,
+  delPost,
   getAllPosts,
   getThisPostComments,
 } from "../services/posts";
@@ -36,6 +38,22 @@ export const usePosts = () => {
       console.log("Error creando el post");
     }
   };
+  const deletePost = async (id) => {
+    const resp = await delPost(id);
+    if (resp.ok) {
+      console.log("Se elimino correctamente");
+    } else {
+      console.log("error eliminando el post", resp.error);
+    }
+  };
+  const deleteComment = async (id) => {
+    const resp = await delComment(id);
+    if (resp.ok) {
+      console.log("Se elimino correctamente");
+    } else {
+      console.log("error eliminando el post", resp.error);
+    }
+  };
   const addComment = async (comment) => {
     const resp = await createComment(comment);
     if (resp.ok) {
@@ -61,5 +79,7 @@ export const usePosts = () => {
     filteredPosts,
     addComment,
     getPostComments,
+    deletePost,
+    deleteComment,
   };
 };

@@ -6,7 +6,7 @@ import * as Yup from "yup";
 const Login = () => {
   const router = useRouter();
   const { isValidUser } = useContext(AuthContext);
-  const handleLogin = async ({email,password}) => {
+  const handleLogin = async ({ email, password }) => {
     const valid = await isValidUser(email, password);
     if (valid) {
       router.push("/forum");
@@ -29,17 +29,34 @@ const Login = () => {
       >
         {(formik) => (
           <Form>
-            <div className="mx-4 my-4 rounded bg-zinc-200">
+            <div className="max-w-xl mx-4 my-4 rounded shadow sm:mx-auto bg-slate-50">
               <div className="flex flex-col px-4 py-4">
-                <label className="block mt-2">Email</label>
-                <Field type="text" name="email" className="h-8 px-2 mt-2 rounded" />
-                <span className="text-sm text-red-700"><ErrorMessage name="email" /></span>
-                <label className="block mt-2">Password</label>
-                <Field name="password" className="h-8 px-2 mt-2 rounded" />
-                <span className="text-sm text-red-700"><ErrorMessage name="password" /></span>
+                <img src="/user.png" className="w-24 mx-auto rounded-full" />
+                <label className="block mt-2 font-medium text-violet-400">
+                  Email
+                </label>
+                <Field
+                  type="text"
+                  name="email"
+                  className="h-8 px-2 mt-2 rounded"
+                />
+                <span className="text-sm font-medium text-violet-500">
+                  <ErrorMessage name="email" />
+                </span>
+                <label className="block mt-2 font-medium text-violet-400">
+                  Password
+                </label>
+                <Field
+                  name="password"
+                  type="password"
+                  className="h-8 px-2 mt-2 rounded"
+                />
+                <span className="text-sm font-medium text-violet-500">
+                  <ErrorMessage name="password" />
+                </span>
                 <button
-                    type='submit'
-                  className="py-2 mt-8 text-white rounded bg-zinc-500 font-md"
+                  type="submit"
+                  className="py-2 mt-8 font-medium text-white uppercase bg-violet-500"
                 >
                   Login
                 </button>
@@ -50,9 +67,9 @@ const Login = () => {
       </Formik>
       <div
         onClick={() => router.push("/auth/register")}
-        className="font-semibold text-center cursor-pointer text-zinc-400"
+        className="font-semibold text-center cursor-pointer text-violet-400"
       >
-        Go register
+        Don't have an account ? Register
       </div>
     </>
   );

@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import ForumCard from '../components/ForumCard/ForumCard'
-import ForumMenu from '../components/ForumMenu/ForumMenu'
-import SharedLayout from '../components/SharedLayout/SharedLayout'
+import Head from "next/head";
+import ForumCard from "../components/ForumCard/ForumCard";
+import ForumMenu from "../components/ForumMenu/ForumMenu";
+import SharedLayout from "../components/SharedLayout/SharedLayout";
 
 export default function Home() {
+  document.classList.add("bg-slate-100");
   return (
     <div>
       <Head>
@@ -12,13 +13,11 @@ export default function Home() {
       </Head>
 
       <SharedLayout>
-        <ForumMenu/>
-        <div className='mx-4 mt-4'>
-          <ForumCard/>
+        <ForumMenu />
+        <div className="mx-4 mt-4">
+          <ForumCard />
         </div>
       </SharedLayout>
-
-      
     </div>
-  )
+  );
 }

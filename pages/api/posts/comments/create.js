@@ -14,7 +14,7 @@ const createComment = async (req, res) => {
   } catch (error) {
     res.json({
       ok: false,
-      msg: "error en la db",
+      error,
     });
   }
 };

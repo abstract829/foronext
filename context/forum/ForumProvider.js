@@ -11,6 +11,8 @@ export const ForumProvider = ({ children }) => {
     filteredPosts,
     addComment,
     getPostComments,
+    deletePost,
+    deleteComment,
   } = usePosts();
 
   useEffect(() => {
@@ -26,6 +28,8 @@ export const ForumProvider = ({ children }) => {
         filteredPosts,
         addComment,
         getPostComments,
+        deletePost,
+        deleteComment,
       }}
     >
       {children}

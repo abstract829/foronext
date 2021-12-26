@@ -29,7 +29,7 @@ export default async function verifyUser(req, res) {
   } catch (error) {
     res.json({
       ok: false,
-      msg: "Error en la db login",
+      error,
     });
   }
 }

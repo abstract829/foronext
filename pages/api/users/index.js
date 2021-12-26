@@ -10,7 +10,7 @@ const getAllUsers = async (req, res) => {
   } catch (error) {
     res.json({
       ok: false,
-      msg: "Error en la db",
+      error,
     });
   }
 };
@@ -44,7 +44,7 @@ const createUser = async (req, res) => {
   } catch (error) {
     res.json({
       ok: false,
-      msg: "Error en la db",
+      error,
     });
   }
 };
