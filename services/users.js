@@ -2,10 +2,10 @@ import axios from "axios";
 const jwt = require("jsonwebtoken");
 
 const usersApi = axios.create({
-  baseURL: "http://localhost:3000/api/users",
+  baseURL: "https://foronext.netlify.app/api/users",
 });
 const jwtApi = axios.create({
-  baseURL: "http://localhost:3000/api/jwt/renovate",
+  baseURL: "https://foronext.netlify.app/api/jwt/renovate",
 });
 
 export const JWT_SEED = "123";
