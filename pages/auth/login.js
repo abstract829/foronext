@@ -1,12 +1,11 @@
-import Login from "../../components/Login/Login"
-import { AuthProvider } from "../../context/auth/AuthProvider"
+import Login from "../../components/Login/Login";
 
 const login = () => {
-    return (
-        <div>
-            <Login/>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Login />
+    </div>
+  );
+};
 
-export default login
+export default login;

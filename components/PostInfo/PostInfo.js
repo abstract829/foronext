@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useContext, useState, useEffect } from "react/cjs/react.development";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { ForumContext } from "../../context/forum/ForumContext";
 import { UsersContext } from "../../context/users/UsersContext";
@@ -7,13 +7,13 @@ import Comment from "../Comment/Comment";
 import CreateComment from "../CreateComment/CreateComment";
 import Swal from "sweetalert2";
 const PostInfo = () => {
+  const { posts, getPostComments, deletePost } = useContext(ForumContext);
   const router = useRouter();
-  const [post, setPost] = useState();
-  const [author, setAuthor] = useState();
-  const [comments, setComments] = useState();
+  const [post, setPost] = useState(null);
+  const [author, setAuthor] = useState(null);
+  const [comments, setComments] = useState(null);
   const [page, setPage] = useState(0);
   const [toggleCommentBox, setToggleCommentBox] = useState(false);
-  const { posts, getPostComments, deletePost } = useContext(ForumContext);
   const { getUserById } = useContext(UsersContext);
   const { logedUser } = useContext(AuthContext);
   const { id } = router.query;

@@ -1,6 +1,5 @@
-import { useContext } from "react/cjs/react.development";
 import { AuthContext } from "../../context/auth/AuthContext";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ForumContext } from "../../context/forum/ForumContext";
 const CreateComment = ({ idpost }) => {
   const { logedUser } = useContext(AuthContext);

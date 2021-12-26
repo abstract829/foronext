@@ -1,23 +1,18 @@
 import Head from "next/head";
-import ForumCard from "../components/ForumCard/ForumCard";
-import ForumMenu from "../components/ForumMenu/ForumMenu";
-import SharedLayout from "../components/SharedLayout/SharedLayout";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  document.classList.add("bg-slate-100");
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/auth/login");
+  }, []);
   return (
     <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <SharedLayout>
-        <ForumMenu />
-        <div className="mx-4 mt-4">
-          <ForumCard />
-        </div>
-      </SharedLayout>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { ForumContext } from "../../context/forum/ForumContext";
 
 const ForumCard = ({ post }) => {

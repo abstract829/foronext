@@ -1,7 +1,6 @@
 import { AiOutlineMenu } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router";
-import { useContext } from "react/cjs/react.development";
 import { AuthContext } from "../../context/auth/AuthContext";
 const Header = () => {
   const router = useRouter();
